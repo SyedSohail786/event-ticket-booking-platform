@@ -19,15 +19,12 @@ function EventDetail() {
 
   const handleBooking = async () => {
   try {
-    // Confirm login
     const role = localStorage.getItem('role');
-if (role !== 'user') {
-  alert('Please login as user');
-  navigate('/login');
-}
+    if (role !== 'user') {
+      alert('Please login as user');
+      return navigate('/login');
+    }
 
-
-    // Proceed to book
     const res = await axios.post(
       `${BASE}/api/tickets/book`,
       { eventId: id, quantity },
@@ -35,12 +32,19 @@ if (role !== 'user') {
     );
 
     setMessage('✅ Ticket booked successfully!');
+    
+    // Subtract quantity from availableTickets in UI
+    setEvent((prev) => ({
+      ...prev,
+      availableTickets: prev.availableTickets - quantity
+    }));
   } catch (err) {
     console.error(err);
     alert('You must login to book a ticket.');
     navigate('/login');
   }
 };
+
 
 
   if (!event) return <div className="text-center mt-10">Loading event...</div>;
@@ -62,7 +66,15 @@ if (role !== 'user') {
         <input
           type="number"
           value={quantity}
-          onChange={(e) => setQuantity(parseInt(e.target.value))}
+          onChange={(e) => {
+  const val = parseInt(e.target.value);
+  if (val > event.availableTickets) {
+    alert(`Only ${event.availableTickets} tickets available`);
+    return;
+  }
+  setQuantity(val);
+}}
+
           min="1"
           max={event.availableTickets}
           className="border px-3 py-1 w-20 rounded"
