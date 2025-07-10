@@ -15,6 +15,7 @@ import AdminDashboard from './pages/AdminDashboard'
 import EventsGrid from './pages/EventsGrid'
 import EventDetail from './pages/EventDetail'
 import MyTickets from './pages/MyTickets'
+import Footer from './components/common/Footer'
 
 export default function App() {
   return (
@@ -44,6 +45,7 @@ export default function App() {
 
 
       </Routes>
+      <Footer/>
     </div>
   )
 }
