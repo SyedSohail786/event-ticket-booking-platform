@@ -16,7 +16,7 @@ function UserLogin() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError('');
+//     setError('');
     setIsLoading(true);
 
     try {

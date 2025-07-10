@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
@@ -22,6 +23,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     localStorage.removeItem('role');
     navigate('/'); // Redirect to home on logout
+    toast.success('Logged out successfully');
     document.cookie = 'token=; Max-Age=0';
     setRole(null);
   };

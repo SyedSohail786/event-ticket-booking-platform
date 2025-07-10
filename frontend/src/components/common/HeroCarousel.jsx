@@ -57,7 +57,7 @@ function HeroCarousel() {
   };
 
   return (
-    <div className="flex justify-center px-2 sm:px-4 md:px-6">
+    <div className="flex mt-5 justify-center px-2 sm:px-4 md:px-6">
       <div className="w-full max-w-6xl relative h-[180px] sm:h-[250px] md:h-[350px] lg:h-[450px] rounded-lg md:rounded-xl overflow-hidden shadow-md md:shadow-xl">
         <AnimatePresence custom={direction} initial={false}>
           <motion.div

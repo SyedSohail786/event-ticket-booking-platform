@@ -6,7 +6,7 @@ const { createBanner, getBanners, deleteBanner, updateBanner } = require('../con
 const adminMiddleware = require('../middleware/adminMiddleware');
 const upload = require('../middleware/uploadMiddleware');
 
-router.post('/', adminMiddleware, upload.single('banner'), createBanner); // Admin adds banner
+router.post('/', adminMiddleware, upload.single('bannerImage'), createBanner); // Admin adds banner
 router.get('/', getBanners);             // Public: fetch all banners for carousel
 router.delete('/:id', adminMiddleware, deleteBanner); // Admin deletes banner
 router.patch('/:id', adminMiddleware, upload.single('bannerImage'), updateBanner);
