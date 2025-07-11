@@ -7,7 +7,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* About */}
         <div>
-          <h3 className="text-xl font-semibold text-white mb-4">2dHand</h3>
+          <h3 className="text-xl font-semibold text-white mb-4">Event Ticket Booking</h3>
           <p className="text-sm text-gray-400">
             Your one-stop platform to explore, book and enjoy amazing events happening around you.
             Simple, fast and secure ticketing experience.
@@ -31,7 +31,7 @@ function Footer() {
           <ul className="text-sm space-y-2">
             <li className="flex items-center gap-2">
               <FiMail className="text-purple-400" />
-              <span>support@2dhand.com</span>
+              <span>support@eventticketbooking.com</span>
             </li>
             <li className="flex items-center gap-2">
               <FiPhone className="text-purple-400" />
@@ -54,7 +54,7 @@ function Footer() {
 
       {/* Bottom */}
       <div className="text-center text-sm text-gray-500 mt-10 border-t border-gray-700 pt-4">
-        &copy; {new Date().getFullYear()} 2dHand. All rights reserved.
+        &copy; {new Date().getFullYear()} Event Ticket Booking. All rights reserved.
         <br />
         Developed by Syed Sohail with ❤️
       </div>

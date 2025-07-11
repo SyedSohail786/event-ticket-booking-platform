@@ -60,7 +60,7 @@ export default function Navbar() {
               className="text-xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent"
               onClick={closeMobileMenu}
             >
-              {role === 'admin' ? '2dHand Admin' : '2dHand'}
+              {role === 'admin' ? 'Event Admin' : 'Event Ticket Booking'}
             </Link>
           </motion.div>
 
