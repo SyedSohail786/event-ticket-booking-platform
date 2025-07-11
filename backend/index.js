@@ -19,7 +19,7 @@ const dashboardRoutes = require('./routes/dashboardRoutes');
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173', // frontend origin
+  origin: ['http://localhost:5173', process.env.FRONTEND_URL], 
   credentials: true
 }));
 app.use(express.json());
