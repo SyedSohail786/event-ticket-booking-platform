@@ -85,6 +85,9 @@ export default function Navbar() {
                   <Link to="/profile" className="text-gray-700 font-medium">Profile</Link>
                 </motion.div>
                 <motion.div variants={linkVariants} whileHover="hover" whileTap="tap">
+                  <Link to="/contact" className="text-gray-700 font-medium">Contact</Link>
+                </motion.div>
+                <motion.div variants={linkVariants} whileHover="hover" whileTap="tap">
                   <button onClick={logout} className="text-red-500 font-medium">Logout</button>
                 </motion.div>
               </>
@@ -201,6 +204,20 @@ export default function Navbar() {
                         Profile
                       </Link>
                     </motion.div>
+                    <motion.div 
+                      whileHover={{ backgroundColor: '#f3f4f6' }}
+                      whileTap={{ scale: 0.98 }}
+                      className="px-3 py-2 rounded-md"
+                    >
+                      <Link 
+                        to="/contact" 
+                        className="text-gray-700 font-medium block w-full"
+                        onClick={closeMobileMenu}
+                      >
+                        Contact
+                      </Link>
+                    </motion.div>
+                    
                     <motion.div 
                       whileHover={{ backgroundColor: '#f3f4f6' }}
                       whileTap={{ scale: 0.98 }}

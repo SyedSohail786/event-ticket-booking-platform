@@ -46,8 +46,8 @@ function Footer() {
           {/* Social */}
           <div className="mt-4 flex gap-4 text-xl text-gray-400">
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FiTwitter /></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FiInstagram /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FiLinkedin /></a>
+            <a href="https://www.instagram.com/busy_sohail?igsh=MWU1MHVpMTUzNmdwNQ==" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FiInstagram /></a>
+            <a href="https://www.linkedin.com/in/syedsohail7867/" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FiLinkedin /></a>
           </div>
         </div>
       </div>
@@ -55,6 +55,8 @@ function Footer() {
       {/* Bottom */}
       <div className="text-center text-sm text-gray-500 mt-10 border-t border-gray-700 pt-4">
         &copy; {new Date().getFullYear()} 2dHand. All rights reserved.
+        <br />
+        Developed by Syed Sohail with ❤️
       </div>
     </footer>
   );

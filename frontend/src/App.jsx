@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import AdminLogin from './components/admin/AdminLogin'
 import Navbar from './components/common/Navbar'
 import UserLogin from './components/user/UserLogin'
@@ -16,8 +16,12 @@ import EventsGrid from './pages/EventsGrid'
 import EventDetail from './pages/EventDetail'
 import MyTickets from './pages/MyTickets'
 import Footer from './components/common/Footer'
+import Contact from './pages/Contact'
 
 export default function App() {
+  const location = useLocation();
+  const showFooter = location.pathname === '/';
+
   return (
     <div>
       <Navbar />
@@ -30,10 +34,6 @@ export default function App() {
         <Route path="/admin/events" element={<AdminEvents />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
-
-
-
-
         <Route path="/login" element={<UserLogin />} />
         <Route path="/register" element={<UserRegister />} />
         <Route path="/profile" element={<Profile />} />
@@ -41,11 +41,9 @@ export default function App() {
         <Route path="/events" element={<EventsGrid />} />
         <Route path="/event/:id" element={<EventDetail />} />
         <Route path="/my-tickets" element={<MyTickets />} />
-
-
-
+        <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Footer/>
+      {showFooter && <Footer />}
     </div>
   )
 }

@@ -29,13 +29,17 @@ function EventDetail() {
     };
 
     fetchEvent();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }, [id]);
 
   const handleBooking = async () => {
     try {
       const role = localStorage.getItem('role');
       if (role !== 'user') {
-        toast.error('Please login as user to book tickets');
+        toast.error('Please login to book tickets');
         return navigate('/login');
       }
 
@@ -109,7 +113,7 @@ function EventDetail() {
 
           <div className="p-6 sm:p-8">
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{event.name}</h1>
-            
+
             <div className="flex items-center text-gray-600 mb-4">
               <FiMapPin className="mr-2" />
               <span>{event.location}</span>
@@ -126,7 +130,7 @@ function EventDetail() {
 
             <div className="border-t border-gray-200 pt-6">
               <h3 className="text-lg font-semibold mb-4">Book Your Tickets</h3>
-              
+
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
                 <div className="flex-1">
                   <label className="block text-sm font-medium text-gray-700 mb-1">

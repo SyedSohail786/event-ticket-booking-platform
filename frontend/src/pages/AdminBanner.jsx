@@ -22,6 +22,10 @@ function AdminBanner() {
 
   useEffect(() => {
     fetchBanners();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }, []);
 
   const handleSubmit = async (e) => {
@@ -92,7 +96,7 @@ function AdminBanner() {
             {editingId ? 'Edit Banner' : 'Create New Banner'}
           </h2>
         </div>
-        
+
         <div className="p-6">
           {error && (
             <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-md transition-opacity duration-300">
@@ -158,15 +162,15 @@ function AdminBanner() {
         <div className="p-6 bg-gradient-to-r from-gray-800 to-gray-900">
           <h3 className="text-xl font-semibold text-white">Existing Banners</h3>
         </div>
-        
+
         <div className="p-4 md:p-6">
           {banners.length === 0 ? (
             <p className="text-gray-500 text-center py-4">No banners available</p>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {banners.map((b) => (
-                <div 
-                  key={b._id} 
+                <div
+                  key={b._id}
                   className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300"
                 >
                   <div className="relative h-48 overflow-hidden">
